@@ -1,27 +1,71 @@
-# WeatherBee
+# Weather-Bee 🌦️
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+This Weather-Bee is a simple, user-friendly application that provides real-time weather updates based on your location. You can also search for weather information in other locations. The application is fully developed using **AngularJS**.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- **Auto Location Detection**: Automatically fetches your current location and displays weather details.
+- **Weather Search**: Allows you to search for weather information of any place.
+- **Real-Time Updates**: Displays accurate and up-to-date weather data.
+- **Responsive Design**: Works seamlessly on desktops, tablets, and mobile devices.
 
-## Code scaffolding
+## Demo
+(https://weather-bee-three.vercel.app/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tech Stack
+- **Frontend**: AngularJS
+- **API**: OpenWeatherMap API (or any other weather API you’ve used)
 
-## Build
+## Installation
+Follow these steps to run the project locally:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. **Clone the Repository**
+   git clone https://github.com/abhimanyuraj040/Weather-Bee.git
+   cd weather-bee
 
-## Running unit tests
+2. Install Dependencies Make sure you have Node.js and npm installed. Then, run:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    npm install
 
-## Running end-to-end tests
+3. Set Up API Key
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    Sign up on OpenWeatherMap to get your API key.
+    Replace the placeholder API key in the project with your actual API key.
+    
+4. Run the Application
 
-## Further help
+    ng serve
+    Navigate to http://localhost:4200 in your browser.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Usage
+Open the app in your browser.
+Grant location permissions when prompted.
+View the weather details for your current location.
+Use the search bar to find weather updates for any other location.
+
+## Screenshots
+Auto-detected location and weather details.
+
+Search and view weather details of other locations.
+
+## Contributing
+Contributions are welcome! Please follow these steps:
+
+Fork the repository.
+Create a new branch:
+    git checkout -b feature/YourFeatureName
+Commit your changes:
+    git commit -m "Add Your Feature Description"
+Push to the branch:
+    git push origin feature/YourFeatureName
+Open a pull request.
+
+## License
+This project is not licensed under the MIT License yet.
+
+## Acknowledgements
+AngularJS for the powerful framework.
+OpenWeatherMap for the weather API.
+Community contributions for feedback and testing.
+
+Developed with ❤️ by Abhimanyu Kumar.
