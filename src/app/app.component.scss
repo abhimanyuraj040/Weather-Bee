@@ -1,0 +1,190 @@
+.example-card {
+    max-width: 400px;
+    padding: 16px; 
+    box-shadow: 0px 4px 6px rgba(93, 16, 16, 0.1); 
+    border-radius: 8px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+  .mat-card-header{
+    flex-direction: row-reverse;
+  }
+
+  .mat-card-actions{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .compo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #4CAF50, #2196F3);
+    margin: 0;
+  }
+
+  .city-name-icon{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .weather-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    border: 2px solid #f44336;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+    max-width: 450px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .weather-card:hover {
+    transform: scale(1.05);
+  }
+  
+  input[type="text"] {
+    padding: 15px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  input[type="text"]:focus {
+    outline: none;
+    border-color: #2196F3;
+  }
+  
+  input[type="text"]::placeholder {
+    color: #aaa;
+  }
+  
+  button {
+    padding: 12px 20px;
+    margin-top: 10px;
+    background-color: #2196F3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #1565C0;
+    transform: translateY(-3px);
+  }
+  
+  #weather-info {
+    display: none;
+    margin-top: 20px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  #weather-icon {
+    width: 100px;
+    height: 100px;
+  }
+  
+  #temperature {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    margin: 8px 0;
+  }
+  
+  #description {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  #wind-speed,
+  #humidity,
+  #date {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  #date {
+    margin-bottom: 5px;
+    color: #888;
+  }
+  
+  .loading {
+    font-size: 18px;
+    color: #2196F3;
+    margin-top: 20px;
+  }
+  
+  .error-message {
+    font-size: 18px;
+    color: #f44336;
+    margin-top: 20px;
+  }
+  
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+  
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .weather-card {
+        padding: 20px;
+        width: 90%;
+    }
+  
+    input[type="text"] {
+        font-size: 14px;
+    }
+  
+    button {
+        font-size: 14px;
+    }
+  
+    #temperature {
+        font-size: 22px;
+    }
+  
+    #description {
+        font-size: 18px;
+    }
+  
+    #wind-speed,
+    #humidity,
+    #date {
+        font-size: 14px;
+    }
+  }
+
+
+  
