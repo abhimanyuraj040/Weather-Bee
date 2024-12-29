@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   cityName: string = '';
   weatherData: any;
   iconUrl: string = '';
@@ -19,11 +19,10 @@ export class AppComponent implements OnInit{
   private url = 'https://api.openweathermap.org/data/2.5/weather';
   private apiKey = 'f00c38e0279b7bc85480c3fe775d518c';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-      this.getWeather();
-      this.getLocation();
+    this.getLocation();
   }
 
   getLocation(): void {
@@ -37,10 +36,12 @@ export class AppComponent implements OnInit{
         },
         (error) => {
           console.error('Error getting location:', error);
+          this.error = 'Unable to retrieve location.';
         }
       );
     } else {
       console.error('Geolocation is not available in this browser.');
+      this.error = 'Geolocation not supported by your browser.';
     }
   }
 
@@ -51,9 +52,15 @@ export class AppComponent implements OnInit{
       next: (response: any) => {
         this.cityName = response.city || response.locality || 'Unknown location';
         console.log(`City Name: ${this.cityName}`);
+        if (this.cityName && this.cityName !== 'Unknown location') {
+          this.getWeather(); // Fetch weather only after city name is set
+        } else {
+          this.error = 'Unable to determine your city.';
+        }
       },
       error: (err) => {
         console.error('Error fetching city name:', err);
+        this.error = 'Error fetching city name. Please try again.';
       }
     });
   }
@@ -65,9 +72,9 @@ export class AppComponent implements OnInit{
     this.http.get(fullUrl).subscribe(
       (data: any) => {
         this.weatherData = data;
+        this.cdr.detectChanges(); // Force change detection
         console.log(this.weatherData);
         this.iconUrl = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
-        // this.currentDate = format(new Date(), 'MMMM do yyyy, h:mm:ss a');
         document
           .getElementById('weather-info')
           ?.style.setProperty('display', 'block');
