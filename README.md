@@ -52,12 +52,19 @@ Search and view weather details of other locations.
 Contributions are welcome! Please follow these steps:
 
 Fork the repository.
+
 Create a new branch:
+
     git checkout -b feature/YourFeatureName
+
 Commit your changes:
+
     git commit -m "Add Your Feature Description"
+
 Push to the branch:
+
     git push origin feature/YourFeatureName
+    
 Open a pull request.
 
 ## License
