@@ -6,7 +6,7 @@
           Get Weather
         </button></mat-card-subtitle
       >
-      <input type="text" placeholder="Enter city name" />
+      <input type="text" placeholder="Enter city name" [(ngModel)]="cityName" />
     </mat-card-header>
     <div *ngIf="loading" class="loading">Loading...</div>
     <div *ngIf="error" class="error-message">
