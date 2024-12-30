@@ -3,7 +3,7 @@
     <mat-card-header>
       <mat-card-subtitle
         ><button mat-button (click)="getWeather()">
-          Get Weather
+          Change City
         </button></mat-card-subtitle
       >
       <input type="text" placeholder="Enter city name" [(ngModel)]="cityName" />
@@ -22,16 +22,33 @@
           <h3 id="city-name">{{ weatherData.name }}</h3>
           <img [src]="iconUrl" alt="Weather Icon" id="weather-icon" />
         </div>
-        <p id="temperature">{{ weatherData.main.temp }}°C</p>
-        <p id="date">{{ currentDate }}</p>
-        <p id="description">{{ weatherData.weather[0].description }}</p>
-        <p id="humidity">Humidity: {{ weatherData.main.humidity }}%</p>
-        <p id="wind-speed">Wind Speed: {{ weatherData.wind.speed }} m/s</p>
+        <div class="weather-details">
+          <p id="temperature">{{ weatherData.main.temp | number:'1.0-0' }}°C</p>
+          <div class="minmaxContainer">
+            <div class="min">
+              <p class="minHeading">Min</p>
+              <p class="minTemp">{{ weatherData.main.temp_min | number:'1.0-0' }}°C</p>
+            </div>
+            <div class="max">
+              <p class="maxHeading">Max</p>
+              <p class="maxTemp">{{ weatherData.main.temp_max | number:'1.0-0' }}°C</p>
+            </div>
+          </div>
+          <p id="date">{{ currentDate }}</p>
+          <p id="description">{{ weatherData.weather[0].description }}</p>
+          <p id="humidity">Humidity: {{ weatherData.main.humidity }}%</p>
+          <p id="wind-speed">Wind Speed: {{ weatherData.wind.speed }} m/s</p>
+        </div>
       </div>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button (click)="getLocation()">Get Location</button>
-      <button mat-button>SHARE</button>
+      <button mat-button style="margin-bottom: 1rem;"><a
+        href="https://api.whatsapp.com/send?text=Check this out! https://weather-bee-three.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Share to WhatsApp
+      </a></button>
     </mat-card-actions>
   </mat-card>
 </div>
