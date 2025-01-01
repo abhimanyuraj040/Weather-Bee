@@ -68,7 +68,7 @@ Push to the branch:
 Open a pull request.
 
 ## License
-This project is not licensed under the MIT License yet.
+This project is licensed under the MIT License. [MIT License](LICENSE)
 
 ## Acknowledgements
 AngularJS for the powerful framework.
